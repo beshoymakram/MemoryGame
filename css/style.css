@@ -1,0 +1,138 @@
+* {
+    font-family: Impact;
+}
+
+.form-section {
+    width: 100%;
+}
+
+.form-section form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    /* background-color: cadetblue; */
+    border-radius: 20px;
+    /* padding: 30px 0; */
+}
+
+.form-section fieldset {
+    background-color: cadetblue;
+    border-radius: 20px;
+    border: 0;
+
+}
+
+.form-group {
+    padding: 10px 0;
+}
+
+.form-group input,
+.form-group select {
+    width: 70%;
+    padding: 5px 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.form-group label {
+    display: block;
+    padding: 5px 0;
+}
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}
+
+hr {
+    background-color: yellow;
+}
+
+.hello-message {
+    text-align: center;
+    font-size: 20px;
+    color: green;
+}
+
+.client-info {
+    text-align: center;
+    font-size: 20px;
+    color: cadetblue;
+}
+
+.client-info strong {
+    color: black;
+}
+
+.client-info span {
+    display: block;
+    padding: 10px 0;
+}
+
+p#warning {
+    color: red;
+}
+
+.slideshow-section {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.slideshow-section .buttons-2 {
+    padding: 20px 0;
+}
+
+.start-slideshow {
+    background-color: green;
+}
+
+.stop-slideshow {
+    background-color: tomato;
+}
+
+.slideshow-section .slideshow {
+    width: 600px;
+    margin: 50px auto;
+}
+
+.slideshow-section .slideshow img {
+    width: 100%;
+    border-radius: 40px;
+
+}
+
+.marbel-section {
+    text-align: center;
+    padding: 50px 0;
+    /* margin-top: 200px; */
+}
+
+
+.marbel-section .marbel {
+    display: inline;
+    padding: 0 40px;
+}
+
+.memory-game-section {
+    text-align: center;
+    margin-top: 150px;
+    background-position: center;
+    background-size: contain;
+}
+
+.memory-game-section .hide {
+    display: none;
+}
+
+.memory-game-section .congrats {
+    color: #128516;
+    display: none;
+}

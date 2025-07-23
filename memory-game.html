@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <section class="memory-game-section">
+        <div class="congrats">
+            <h2>Congratulations! You got 6 out of 6! &#128516;</h2>
+        </div>
+        <div class="row">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-1">
+            <img src="TaskResources/memory Game/1.gif" class="hide" id="moon-1-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-2">
+            <img src="TaskResources/memory Game/6.gif" class="hide" id="moon-2-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-3">
+            <img src="TaskResources/memory Game/3.gif" class="hide" id="moon-3-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-4">
+            <img src="TaskResources/memory Game/2.gif" class="hide" id="moon-4-real">
+        </div>
+        <div class="row">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-5">
+            <img src="TaskResources/memory Game/5.gif" class="hide" id="moon-5-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-6">
+            <img src="TaskResources/memory Game/1.gif" class="hide" id="moon-6-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-7">
+            <img src="TaskResources/memory Game/2.gif" class="hide" id="moon-7-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-8">
+            <img src="TaskResources/memory Game/3.gif" class="hide" id="moon-8-real">
+        </div>
+        <div class="row">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-9">
+            <img src="TaskResources/memory Game/4.gif" class="hide" id="moon-9-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-10">
+            <img src="TaskResources/memory Game/4.gif" class="hide" id="moon-10-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-11">
+            <img src="TaskResources/memory Game/6.gif" class="hide" id="moon-11-real">
+            <img src="TaskResources/memory Game/Moon.gif" onclick="flipMe(this)" id="moon-12">
+            <img src="TaskResources/memory Game/5.gif" class="hide" id="moon-12-real">
+        </div>
+    </section>
+
+    <script>
+        let choosenImg = '';
+        let choosenMoonId = '';
+        let choosenImg2 = '';
+        let choosenMoonId2 = '';
+        let score = 0;
+
+        function flipMe(moon) {
+            moonId = moon.id;
+            moonRealImage = document.getElementById(moonId + '-real')
+            moon.style.display = 'none';
+            moonRealImage.style.display = 'inline';
+            if (choosenImg != '') {
+                choosenImg2 = moonRealImage;
+
+            } else {
+                choosenImg = moonRealImage;
+            }
+
+            setTimeout(function () {
+                if (choosenImg != '' && choosenImg2 == '') {
+                    choosenImg.style.display = 'none';
+                    choosenMoonId = document.getElementById(choosenImg.id.replace('-real', '')).style.display = 'inline';
+                } else if (choosenImg != '' && choosenImg2 != '' && choosenImg.src != choosenImg2.src) {
+                    choosenImg.style.display = 'none';
+                    choosenImg2.style.display = 'none';
+                    choosenMoonId = document.getElementById(choosenImg.id.replace('-real', '')).style.display = 'inline';
+                    choosenMoonId2 = document.getElementById(choosenImg2.id.replace('-real', '')).style.display = 'inline';;
+                } else if (choosenImg != '' && choosenImg2 != '' && choosenImg.src == choosenImg2.src) {
+                    score += 1;
+                }
+                choosenImg = '';
+                choosenMoonId = '';
+                choosenImg2 = '';
+                choosenMoonId2 = '';
+
+                if (score == 6) {
+                    document.querySelector('.congrats').style.display = 'block'
+                    document.querySelector('.memory-game-section').style.background = "url('/TaskResources/memory\ Game/celebrate.gif')"
+                } else {
+                    document.querySelector('.congrats').style.display = 'none';
+                }
+            }, 1000)
+
+
+        }
+    </script>
+</body>
+
+</html>
